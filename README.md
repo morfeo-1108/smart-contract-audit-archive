@@ -18,3 +18,7 @@ A report against a toy contract proves I can write Markdown. A report against a 
 2. Cross-validation: a finding only reaches HIGH confidence if corroborated by a second tool or a manual read of the real source.
 3. Manual verification for anything claiming fund theft, full-drain, or access-control bypass — including Foundry fork tests against mainnet state when the claim is material.
 4. Noise filtering: detector-level style findings (`naming-convention`, `name-reused`, `solc-version`, etc.) are excluded from severity counts — they're not vulnerabilities.
+
+---
+
+Audited by Nicolás Talero — Founder & Lead Security Auditor @ Digital Nova Solutions SAS

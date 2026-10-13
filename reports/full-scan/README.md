@@ -54,3 +54,7 @@ One real report per contract, generated from actual pipeline output with the sam
 | [`0xba100000625a3754423978a60c9317c58a424e3d`](./0xba100000625a3754423978a60c9317c58a424e3d.md) | 2026-08-21 | LOW-ONLY | 0 | 0 |
 | [`0xc20059e0317de91738d13af027dfc4a50781b066`](./0xc20059e0317de91738d13af027dfc4a50781b066.md) | 2026-08-21 | LOW-ONLY | 0 | 0 |
 | [`0xf57e7e7c23978c3caec3c3548e3d615c346e79ff`](./0xf57e7e7c23978c3caec3c3548e3d615c346e79ff.md) | 2026-08-21 | LOW-ONLY | 0 | 0 |
+
+---
+
+Audited by Nicolás Talero — Founder & Lead Security Auditor @ Digital Nova Solutions SAS

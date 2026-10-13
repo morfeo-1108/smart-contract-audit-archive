@@ -40,3 +40,7 @@ A clean result isn't a failure of the audit — a well-written, access-controlle
 ## Full scan — all 50 contracts
 
 - [`reports/full-scan/README.md`](./reports/full-scan/README.md) — one real report per contract, sorted by findings. Every number in the summary table above traces back to one of these 50 files.
+
+---
+
+Audited by Nicolás Talero — Founder & Lead Security Auditor @ Digital Nova Solutions SAS
