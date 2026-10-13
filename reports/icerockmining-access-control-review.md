@@ -3,7 +3,7 @@
 **Target:** `0xC16b542ff490e01fcc0DC58a60e1EFdc3e357cA6` (Ethereum mainnet)
 **Deployed:** 2018 · Solidity `^0.4.18` · Source verified on Etherscan
 **Scope:** Full contract (custom ERC20-style token with dividend distribution and a custom `itMaps` storage library)
-**Tools:** Slither, Aderyn, Mythril, Semgrep, Solodit pattern match, LLM review with static cross-validation
+**Tools:** Slither, Aderyn, Mythril, Semgrep, Solodit pattern match, automated review with static cross-validation
 
 ## Summary
 
@@ -26,7 +26,7 @@ modifier onlyOwner {
 
 Flagged by Slither (`incorrect-modifier`, High confidence) as not executing `_;` or reverting on all paths. Confirmed by reading the real source: if the caller is not the owner, the modifier simply **does not execute the function body** — but it also does not revert. The call returns successfully having done nothing.
 
-**Impact, after manual review:** this is a correctness bug, not a privilege-escalation vulnerability. A non-owner calling an `onlyOwner` function gets silent no-op behavior instead of either (a) the expected side effect or (b) a clear revert. It does **not** allow a non-owner to execute owner-gated logic. Downgraded from "access control bypass" (the LLM's initial framing) to **logic correctness defect** after verification.
+**Impact, after manual review:** this is a correctness bug, not a privilege-escalation vulnerability. A non-owner calling an `onlyOwner` function gets silent no-op behavior instead of either (a) the expected side effect or (b) a clear revert. It does **not** allow a non-owner to execute owner-gated logic. Downgraded from "access control bypass" (the review layer's initial framing) to **logic correctness defect** after verification.
 
 ## Finding: "owner can drain all funds" (verified, correctly scoped)
 
@@ -36,7 +36,7 @@ function withdraw(uint amount) public onlyOwner {
 }
 ```
 
-The LLM review flagged this as "owner can drain all funds" (LOW confidence, flagged `needs_review`). Verified: this is the contract's own owner-withdrawal function, gated by the (broken-but-not-bypassable) modifier above. It is centralization risk — the same category as "has no timelock" — not an externally exploitable vulnerability. Reported as a centralization/governance finding, not a security vulnerability.
+The automated review flagged this as "owner can drain all funds" (LOW confidence, flagged `needs_review`). Verified: this is the contract's own owner-withdrawal function, gated by the (broken-but-not-bypassable) modifier above. It is centralization risk — the same category as "has no timelock" — not an externally exploitable vulnerability. Reported as a centralization/governance finding, not a security vulnerability.
 
 ## Finding: reentrancy in `transferAllDividends()` (scoped as Low — correctly, not inflated)
 
