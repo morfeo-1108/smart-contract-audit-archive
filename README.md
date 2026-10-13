@@ -21,4 +21,4 @@ A report against a toy contract proves I can write Markdown. A report against a 
 
 ---
 
-Audited by Nicolás Talero — Founder & Lead Security Auditor @ Digital Nova Solutions SAS
+Audited by Nicolás Talero Riaño — Founder & Lead Security Auditor @ Digital Nova Solutions SAS

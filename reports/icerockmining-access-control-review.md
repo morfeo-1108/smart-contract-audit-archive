@@ -58,4 +58,4 @@ Classic checks-effects-interactions violation — but the external call uses gas
 
 ---
 
-Audited by Nicolás Talero — Founder & Lead Security Auditor @ Digital Nova Solutions SAS
+Audited by Nicolás Talero Riaño — Founder & Lead Security Auditor @ Digital Nova Solutions SAS

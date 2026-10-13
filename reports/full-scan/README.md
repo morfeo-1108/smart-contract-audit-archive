@@ -57,4 +57,4 @@ One real report per contract, generated from actual pipeline output with the sam
 
 ---
 
-Audited by Nicolás Talero — Founder & Lead Security Auditor @ Digital Nova Solutions SAS
+Audited by Nicolás Talero Riaño — Founder & Lead Security Auditor @ Digital Nova Solutions SAS

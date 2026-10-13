@@ -43,4 +43,4 @@ A clean result isn't a failure of the audit — a well-written, access-controlle
 
 ---
 
-Audited by Nicolás Talero — Founder & Lead Security Auditor @ Digital Nova Solutions SAS
+Audited by Nicolás Talero Riaño — Founder & Lead Security Auditor @ Digital Nova Solutions SAS

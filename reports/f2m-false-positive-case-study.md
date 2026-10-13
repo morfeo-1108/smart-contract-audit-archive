@@ -38,4 +38,4 @@ The finding was downgraded to `FALSE_POSITIVE_AUTO` / confidence LOW after this 
 
 ---
 
-Audited by Nicolás Talero — Founder & Lead Security Auditor @ Digital Nova Solutions SAS
+Audited by Nicolás Talero Riaño — Founder & Lead Security Auditor @ Digital Nova Solutions SAS
