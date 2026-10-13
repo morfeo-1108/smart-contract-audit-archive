@@ -7,9 +7,12 @@ Aggregate results from a full pass through the audit pipeline (Slither + Aderyn 
 | | Count |
 |---|---|
 | Contracts scanned | 50 |
-| With ≥1 finding in a real vulnerability category | 29 |
-| Clean (no security-relevant findings) | 20 |
-| Flagged only by tool-noise detectors (excluded from the above) | 1 |
+| **With ≥1 Critical/High finding** (real, after noise filter) | **29** |
+| With real findings capped at Medium severity | 11 |
+| With real findings capped at Low/Informational | 7 |
+| Clean — zero real findings at any severity | 3 |
+
+Every row above links to a real, individual report in [`reports/full-scan/`](./reports/full-scan/) — 50 files, one per contract, each showing exactly what was found and what was filtered as tool-noise. Click through and check any number against the actual report.
 
 A clean result isn't a failure of the audit — a well-written, access-controlled, non-reentrant contract with checked transfers *should* come back clean.
 
@@ -28,8 +31,12 @@ A clean result isn't a failure of the audit — a well-written, access-controlle
 | Uninitialized state | 2 | Storage variable read before being set anywhere in the constructor/init path |
 | Delegatecall to user-controlled address | 1 | Full contract takeover if reachable without access control |
 
-## Reports in this archive
+## Worked-example reports (deep-dive methodology)
 
 - [`reports/icerockmining-access-control-review.md`](./reports/icerockmining-access-control-review.md) — access-control modifier bug, confirmed against real source
 - [`reports/etherToken-reentrancy-review.md`](./reports/etherToken-reentrancy-review.md) — reentrancy flag investigated and correctly scoped as low risk
 - [`reports/f2m-false-positive-case-study.md`](./reports/f2m-false-positive-case-study.md) — "steal all funds" claim, investigated, confirmed false positive via Foundry fork test
+
+## Full scan — all 50 contracts
+
+- [`reports/full-scan/README.md`](./reports/full-scan/README.md) — one real report per contract, sorted by findings. Every number in the summary table above traces back to one of these 50 files.
