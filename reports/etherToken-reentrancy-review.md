@@ -41,3 +41,7 @@ Flagged by the automated review layer, not corroborated by static tools. This is
 ## Verdict
 
 No exploitable vulnerability identified. The contract correctly implements checks-effects-interactions for the value-affecting state change; the reentrancy *pattern* flagged by automated tooling does not correspond to a real exploit path once the actual order of operations is read. ETH held by the contract (27.15 ETH at time of review) is the aggregate of individual wrapped balances — not trapped or recoverable funds.
+
+---
+
+Audited by Nicolás Talero — Founder & Lead Security Auditor @ Digital Nova Solutions SAS

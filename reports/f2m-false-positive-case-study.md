@@ -35,3 +35,7 @@ The finding was downgraded to `FALSE_POSITIVE_AUTO` / confidence LOW after this 
 - Findings flagged by the review layer with "steal/drain/theft" language get an automatic secondary check against the contract's real access-control modifiers before they're trusted.
 - When a claim is material enough (full fund drain, in this case), static reading of source is treated as necessary but not sufficient — a live fork test against real state is the actual bar for confirming or rejecting it.
 - A finding that doesn't survive this process gets reported as a false positive with the reasoning shown, not quietly deleted.
+
+---
+
+Audited by Nicolás Talero — Founder & Lead Security Auditor @ Digital Nova Solutions SAS

@@ -55,3 +55,7 @@ Classic checks-effects-interactions violation — but the external call uses gas
 ## Verdict
 
 0 Critical, 0 confirmed High-severity exploitable vulnerabilities after manual review. The real findings are code-quality and centralization-risk issues typical of 2018-era Solidity (no SafeMath, custom storage library with unchecked return values, broken-but-safe access modifier). No path for an external attacker to drain contract funds was identified.
+
+---
+
+Audited by Nicolás Talero — Founder & Lead Security Auditor @ Digital Nova Solutions SAS
