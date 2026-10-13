@@ -3,7 +3,7 @@
 **Target:** `0xc0829421C1d260BD3cB3E0F06cfE2D52db2cE315` (Ethereum mainnet)
 **Deployed:** 2018 · Solidity `v0.4.16` · Source verified on Etherscan
 **Scope:** Full contract — Bancor-pattern ETH wrapper (`deposit()`/`withdraw()`, `Utils`/`Owned`/`ERC20Token`/`TokenHolder` base contracts)
-**Tools:** Slither, Aderyn, Mythril, Semgrep, Solodit pattern match, automated review with static cross-validation
+**Tools:** Slither, Aderyn, Mythril, Semgrep, Solodit pattern match, with static cross-validation
 
 ## Summary
 
@@ -34,9 +34,9 @@ Slither flags this as `reentrancy-eth` because state-unrelated events fire after
 
 **Why this matters for how we report findings:** a less careful pass would report this as "High — reentrancy vulnerability" because the pattern superficially matches the checks-effects-interactions violation shape. Reading the actual order of operations (balance update vs. event emission) changes the correct severity from High to Low. We report the Low.
 
-## Finding: `deposit()` does not emit `Transfer()` (flagged by the review layer, LOW confidence, under review)
+## Finding: `deposit()` does not emit `Transfer()` (flagged during the initial scan, LOW confidence, under review)
 
-Flagged by the automated review layer, not corroborated by static tools. This is a real ERC20-compliance gap (some indexers/integrations expect a `Transfer(0x0, user, amount)` event on mint-equivalent operations) but not a security vulnerability — funds are correctly tracked internally regardless of the missing event. Reported at LOW confidence per our grounding policy: findings from the review layer alone without static-tool corroboration don't get promoted to HIGH without manual confirmation.
+Flagged during the initial scan, not corroborated by static tools. This is a real ERC20-compliance gap (some indexers/integrations expect a `Transfer(0x0, user, amount)` event on mint-equivalent operations) but not a security vulnerability — funds are correctly tracked internally regardless of the missing event. Reported at LOW confidence per our grounding policy: findings from the initial scan alone without static-tool corroboration don't get promoted to HIGH without manual confirmation.
 
 ## Verdict
 

@@ -1,6 +1,6 @@
 # Index — 50 Contracts Scanned
 
-Aggregate results from a full pass through the audit pipeline (Slither + Aderyn + Mythril + Semgrep + Heimdall + automated review, with cross-validation). Numbers below are **after** filtering out tool-noise detectors (`name-reused`, `naming-convention`, `solc-version`, and similar style-only findings) that don't represent real vulnerabilities — a report that doesn't do this filtering is reporting tool artifacts, not security findings.
+Aggregate results from a full pass through the audit pipeline (Slither + Aderyn + Mythril + Semgrep + Heimdall, with cross-validation). Numbers below are **after** filtering out tool-noise detectors (`name-reused`, `naming-convention`, `solc-version`, and similar style-only findings) that don't represent real vulnerabilities — a report that doesn't do this filtering is reporting tool artifacts, not security findings.
 
 ## Summary
 
